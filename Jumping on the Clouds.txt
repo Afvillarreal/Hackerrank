@@ -1,0 +1,44 @@
+static int jumpingOnClouds(int[] c) {            
+
+       int count = 0;
+       int len = c.Count();
+       int zero = 0;
+       for (int i = 0; i<len; i++){
+
+           
+
+            if (c[i] == 0){
+                //Console.WriteLine("entra 0");
+                zero++;               
+            }
+            
+            else {
+                //Console.WriteLine("entra 1");
+
+                if (zero==2){
+                    
+                    count++;
+                    Console.WriteLine("zero 2 "+count);
+
+                }
+                if (zero>2){
+                     zero = zero/2;
+                     for (int e=0; e<=zero; e++){
+                         count++;
+                     }
+                                         
+                }
+                else{
+                  count++;
+                   Console.WriteLine("one count"+count);               
+                }
+                zero=0;               
+            }
+
+       }
+       if (zero>1){
+           count ++;
+       }
+       
+       return count;
+       }
